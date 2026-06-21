@@ -52,7 +52,9 @@ export const App: React.FC = () => {
               <TodoList
                 todos={visible}
                 selectedTodo={selectedTodo}
-                onSelected={todo => setSelectedTodo(todo)}
+                onSelected={(todo) => setSelectedTodo(
+                  selectedTodo?.id === todo.id ? null : todo
+                )}
               />
             </div>
           </div>
